@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Trouvé! | Optimisation de fiches Google pour entreprises locales</title>
+  <meta
+    name="description"
+    content="Trouvé! aide les commerçants, artisans et TPE à améliorer leur présence sur Google pour être trouvés plus facilement par les clients."
+  />
+  <meta name="theme-color" content="#1f6fb2" />
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --bg-soft: #edf6f4;
+      --surface: #ffffff;
+      --surface-soft: #f8fbfc;
+      --text: #16212d;
+      --muted: #5f6b7a;
+      --line: #d8e1ea;
+      --primary: #1f6fb2;
+      --primary-dark: #18588d;
+      --accent: #11836f;
+      --accent-soft: #e6f6f2;
+      --warning-soft: #fff7e6;
+      --shadow: 0 18px 45px rgba(20, 33, 61, 0.08);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --container: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #f0f8ff 0, transparent 34%),
+        radial-gradient(circle at bottom right, #ebf8f3 0, transparent 30%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      z-index: 999;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(216, 225, 234, 0.85);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand strong {
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding: 0.6rem 0.85rem;
+      border-radius: 999px;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: #eef4fa;
+      color: var(--text);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 0.9rem 1.2rem;
+      font-weight: 750;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(31, 111, 178, 0.16);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: #f8fbff;
+    }
+
+    .hero {
+      padding: 5.5rem 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #c5ebe2;
+      border-radius: 999px;
+      padding: 0.4rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 0 0 1.5rem;
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 66ch;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 66ch;
+    }
+
+    .card,
+    .hero-card,
+    .banner,
+    .soft-panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1.4rem;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 0.9rem;
+      font-size: 1.15rem;
+    }
+
+    .hero-metric {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .metric-item {
+      padding: 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface-soft);
+    }
+
+    .metric-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-tight {
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+    }
+
+    .section-head {
+      max-width: 820px;
+      margin-bottom: 2rem;
+    }
+
+    .section-head h2 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 1.35rem;
+      height: 100%;
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.18rem;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 1.35rem;
+      color: var(--text);
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .soft-panel {
+      padding: 1.5rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .service-card .label {
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      font-size: 0.83rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+
+    .service-card .block {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .service-card .block strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.94rem;
+    }
+
+    .diagnostic {
+      background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(247,251,255,0.82));
+    }
+
+    .diagnostic-box {
+      padding: 1.3rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .diagnostic-box h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .banner {
+      padding: 1.7rem;
+      background: linear-gradient(135deg, #f8fcff 0%, #eef8f5 100%);
+    }
+
+    .banner h2,
+    .banner h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .banner p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .warning {
+      background: var(--warning-soft);
+      border-color: #f1d9a8;
+      box-shadow: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .contact-details p,
+    .contact-details a {
+      color: var(--muted);
+    }
+
+    .contact-details strong {
+      color: var(--text);
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .form-card form {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-weight: 750;
+      font-size: 0.96rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      background: #fff;
+      color: var(--text);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(31, 111, 178, 0.12);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .small-print,
+    .status {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .status {
+      margin: 0;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .footer p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(31, 111, 178, 0.25);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .split,
+      .contact-grid,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 4.5rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .nav-links a:not(.btn) {
+        padding-left: 0;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .hero-cta,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!--
+    MODIFICATIONS RAPIDES AVANT PUBLICATION :
+    1. Remplacer contact@trouve-local.fr par ton vrai email.
+    2. Remplacer 06 00 00 00 00 par ton vrai téléphone si tu veux l'afficher.
+    3. Remplacer la zone géographique par ta vraie zone de départ.
+    4. Le formulaire utilise mailto: : il ouvre la messagerie du visiteur.
+  -->
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Accueil Trouvé!">
+        <strong>Trouvé!</strong>
+        <span>Visibilité Google pour commerces, artisans et TPE</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#problemes">Problèmes</a>
+        <a href="#solution">Solution</a>
+        <a href="#services">Services</a>
+        <a href="#diagnostic">Diagnostic</a>
+        <a href="#confiance">Confiance</a>
+        <a href="#contact" class="btn btn-primary">Audit gratuit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Pour commerçants, artisans et TPE</span>
+          <h1>Rendez votre entreprise plus visible sur Google</h1>
+          <p class="lead">
+            Trouvé! aide les commerçants, artisans et TPE à améliorer leur présence sur Google
+            pour être trouvés plus facilement par les clients.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Demander un audit gratuit</a>
+            <a class="btn btn-secondary" href="#services">Voir les services</a>
+          </div>
+
+          <p class="hero-note">
+            Une approche simple, locale et humaine pour rendre votre fiche Google plus claire,
+            plus rassurante et plus utile à vos futurs clients.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Résumé rapide de l'offre">
+          <h2>Ce que Trouvé! améliore sur votre fiche</h2>
+          <div class="hero-metric">
+            <div class="metric-item">
+              <strong>Informations</strong>
+              <span>Horaires, téléphone, adresse, zone d'intervention, services.</span>
+            </div>
+            <div class="metric-item">
+              <strong>Présentation</strong>
+              <span>Description claire, photos plus rassurantes, fiche plus professionnelle.</span>
+            </div>
+            <div class="metric-item">
+              <strong>Confiance</strong>
+              <span>Avis mieux suivis, réponses plus propres, informations à jour.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="problemes">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Le problème</span>
+          <h2>Votre fiche Google existe peut-être, mais elle ne vous aide pas forcément à convaincre</h2>
+          <p>
+            Quand un client cherche un commerce, un artisan ou un service local, il compare vite.
+            Si votre fiche paraît vide, floue ou peu soignée, il peut choisir un concurrent mieux présenté.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <h3>Fiche peu visible</h3>
+            <p>
+              Votre entreprise existe, mais elle n'apparaît pas toujours clairement dans les recherches locales utiles.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Informations incomplètes</h3>
+            <p>
+              Horaires manquants, téléphone peu visible, description trop courte ou services mal expliqués.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Photos peu valorisantes</h3>
+            <p>
+              Des photos anciennes, absentes ou peu engageantes peuvent donner une impression moins professionnelle.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Avis peu suivis</h3>
+            <p>
+              Une fiche sans réponses aux avis ou sans méthode simple peut sembler moins active et moins rassurante.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">La solution</span>
+          <h2>Une fiche Google plus claire, plus complète et plus rassurante</h2>
+          <p>
+            Trouvé! vous aide à améliorer les éléments visibles par vos futurs clients : informations,
+            description, photos, avis, cohérence locale et facilité de contact.
+          </p>
+        </div>
+
+        <div class="split">
+          <div class="soft-panel">
+            <h3>Ce que je fais concrètement</h3>
+            <ul class="list">
+              <li>Analyse de votre fiche Google actuelle.</li>
+              <li>Amélioration des informations importantes.</li>
+              <li>Réécriture ou amélioration de la description.</li>
+              <li>Conseils pour des photos plus utiles et plus rassurantes.</li>
+              <li>Aide à la gestion propre des avis clients.</li>
+              <li>Conseils simples pour faciliter les appels et demandes.</li>
+            </ul>
+          </div>
+
+          <div class="soft-panel">
+            <h3>Ce que vous y gagnez</h3>
+            <ul class="list">
+              <li>Une fiche plus professionnelle au premier regard.</li>
+              <li>Des clients qui comprennent plus vite ce que vous proposez.</li>
+              <li>Une présence locale mieux tenue dans le temps.</li>
+              <li>Moins de jargon, moins de complexité, plus de clarté.</li>
+              <li>Un support concret pour votre visibilité locale.</li>
+              <li>Une approche progressive, sans promesse irréaliste.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Les services</span>
+          <h2>Trois services simples pour améliorer votre présence sur Google</h2>
+          <p>
+            L'objectif est de rester clair : comprendre l'état de votre fiche, l'améliorer,
+            puis la suivre dans le temps si besoin.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card service-card">
+            <span class="label">Service 1</span>
+            <h3>Audit de fiche Google</h3>
+            <p>
+              Un diagnostic clair de votre fiche actuelle : ce qui est bien, ce qui manque,
+              ce qui peut freiner un client et ce qu'il faut corriger en priorité.
+            </p>
+
+            <div class="block">
+              <strong>Pour qui ?</strong>
+              <p>Pour une entreprise qui veut savoir où elle en est avant d'agir.</p>
+            </div>
+
+            <div class="block">
+              <strong>Bénéfice concret</strong>
+              <p>Vous repartez avec une vision claire des améliorations prioritaires.</p>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <span class="label">Service 2</span>
+            <h3>Optimisation complète</h3>
+            <p>
+              Je vous aide à améliorer la fiche : informations, présentation, description,
+              cohérence locale, photos et éléments qui rassurent avant la prise de contact.
+            </p>
+
+            <div class="block">
+              <strong>Pour qui ?</strong>
+              <p>Pour une entreprise qui a déjà une fiche, mais qui ne l'a jamais vraiment travaillée.</p>
+            </div>
+
+            <div class="block">
+              <strong>Bénéfice concret</strong>
+              <p>Une fiche plus propre, plus lisible et plus attractive pour vos futurs clients.</p>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <span class="label">Service 3</span>
+            <h3>Suivi mensuel</h3>
+            <p>
+              Un accompagnement simple pour garder la fiche à jour, suivre les points importants,
+              améliorer progressivement la présentation et éviter que la fiche redevienne inactive.
+            </p>
+
+            <div class="block">
+              <strong>Pour qui ?</strong>
+              <p>Pour une entreprise qui veut déléguer le suivi sans usine à gaz.</p>
+            </div>
+
+            <div class="block">
+              <strong>Bénéfice concret</strong>
+              <p>Une présence locale mieux entretenue, avec moins d'oubli et moins de charge mentale.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diagnostic" id="diagnostic">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Avant / après</span>
+          <h2>Un espace prévu pour vos futurs exemples clients</h2>
+          <p>
+            Pour l'instant, on ne triche pas : pas de faux témoignages, pas de faux résultats.
+            Cette section sert d'exemple de diagnostic, en attendant de vrais cas clients.
+          </p>
+        </div>
+
+        <div class="split">
+          <div class="diagnostic-box">
+            <h3>Avant</h3>
+            <ul class="list">
+              <li>Fiche peu complète.</li>
+              <li>Horaires ou informations imprécises.</li>
+              <li>Description trop générale.</li>
+              <li>Photos absentes ou peu engageantes.</li>
+              <li>Avis peu suivis ou sans réponse.</li>
+            </ul>
+          </div>
+
+          <div class="diagnostic-box">
+            <h3>Après</h3>
+            <ul class="list">
+              <li>Fiche plus claire et plus professionnelle.</li>
+              <li>Informations importantes mieux mises en avant.</li>
+              <li>Activité mieux expliquée.</li>
+              <li>Photos plus cohérentes avec l'entreprise.</li>
+              <li>Méthode simple pour suivre les avis.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="banner" style="margin-top: 1.25rem;">
+          <h3>Exemple de diagnostic type</h3>
+          <p>
+            “Votre fiche est bien présente sur Google, mais plusieurs points peuvent être améliorés :
+            horaires spéciaux absents, photos peu récentes, description trop courte, peu de réponses
+            aux avis et informations utiles pas assez visibles. L'objectif n'est pas de promettre un miracle,
+            mais de rendre votre présence plus claire, plus rassurante et plus utile pour vos futurs clients.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="confiance">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Pourquoi me faire confiance</span>
+          <h2>Une approche locale, claire et sans promesse magique</h2>
+          <p>
+            Trouvé! n'est pas une grosse agence marketing. L'approche est simple : regarder votre fiche,
+            expliquer ce qui peut être amélioré, puis avancer proprement.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Langage clair</h3>
+            <p>
+              Pas de jargon inutile. Les explications doivent être compréhensibles par un artisan,
+              un commerçant ou un indépendant.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Proximité locale</h3>
+            <p>
+              Priorité au local dans un premier temps, avec une approche de terrain, humaine et accessible.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Travail progressif</h3>
+            <p>
+              On améliore ce qui peut l'être : informations, photos, avis, description, clarté et régularité.
+            </p>
+          </article>
+        </div>
+
+        <div class="banner warning" style="margin-top: 1.25rem;">
+          <h3>Transparence importante</h3>
+          <p>
+            Trouvé! est un prestataire indépendant et n'appartient pas à Google.
+            Je ne vends pas une place sur Google et je ne promets pas la première position.
+            Mon rôle est de vous aider à améliorer votre fiche, votre présentation et votre visibilité locale.
+          </p>
+          <p>
+            Votre fiche reste à votre nom. Vous gardez l'accès à votre profil.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offre">
+      <div class="container">
+        <div class="banner">
+          <span class="kicker">Offre de lancement</span>
+          <h2>Je recherche mes premiers commerçants partenaires</h2>
+          <p>
+            Pour construire mes premiers cas clients, je propose un audit offert ou une optimisation test
+            dans un cadre clair et professionnel.
+          </p>
+          <p>
+            En échange, l'objectif est simple : travailler sérieusement, obtenir un retour honnête,
+            et pouvoir utiliser l'amélioration comme exemple si vous êtes d'accord.
+          </p>
+          <a class="btn btn-primary" href="#contact">Demander un audit gratuit</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Contact</span>
+          <h2>Demandez un premier regard sur votre fiche Google</h2>
+          <p>
+            Vous pouvez me contacter pour un premier échange simple. Je regarde votre fiche et je vous indique
+            les améliorations prioritaires, sans engagement.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-details">
+            <h3>Coordonnées</h3>
+            <p><strong>Email :</strong> <a href="mailto:contact@trouve-local.fr">contact@trouve-local.fr</a></p>
+            <p><strong>Téléphone :</strong> <a href="tel:+33600000000">06 00 00 00 00</a></p>
+            <p><strong>Zone géographique :</strong> priorité au local, avec possibilité d'accompagnement à distance selon les besoins.</p>
+            <p><strong>Public accompagné :</strong> commerçants, artisans, TPE et indépendants.</p>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="mailto:contact@trouve-local.fr?subject=Demande%20d%27audit%20gratuit%20-%20Trouv%C3%A9">
+                Envoyer un email
+              </a>
+              <a class="btn btn-secondary" href="tel:+33600000000">
+                Appeler
+              </a>
+            </div>
+
+            <p class="small-print" style="margin-top: 1rem;">
+              Avant publication, remplacez l'email, le téléphone et la zone géographique par vos informations réelles.
+            </p>
+          </div>
+
+          <div class="card form-card">
+            <h3>Préparer votre demande</h3>
+            <p class="small-print">
+              Ce formulaire ouvre votre messagerie avec un message déjà préparé.
+              Il reste simple pour être compatible avec GitHub Pages.
+            </p>
+
+            <form id="auditForm">
+              <div class="field">
+                <label for="nom">Votre nom</label>
+                <input id="nom" name="nom" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="entreprise">Nom de l'entreprise</label>
+                <input id="entreprise" name="entreprise" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="ville">Ville ou zone d'intervention</label>
+                <input id="ville" name="ville" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="fiche">Lien de votre fiche Google, si vous l'avez</label>
+                <input id="fiche" name="fiche" type="url" placeholder="https://..." />
+              </div>
+
+              <div class="field">
+                <label for="message">Votre besoin</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Exemple : ma fiche existe déjà mais elle est peu complète, j'ai peu de photos ou peu d'avis récents."
+                ></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Demander un audit gratuit</button>
+              <p id="formStatus" class="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <p>
+        © <span id="year"></span> Trouvé! — Optimisation de fiches Google pour commerçants, artisans et TPE.
+      </p>
+
+      <p>
+        <a
+          href="https://support.google.com/business/answer/7163406?hl=fr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Informations Google sur le travail avec un prestataire externe
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================
+    // PARAMÈTRE À MODIFIER : remplace par ton vrai email.
+    // =========================================================
+    const auditEmail = "tomitcybsec@gmail.com";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const auditForm = document.getElementById("auditForm");
+    const formStatus = document.getElementById("formStatus");
+
+    auditForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const nom = document.getElementById("nom").value.trim();
+      const entreprise = document.getElementById("entreprise").value.trim();
+      const ville = document.getElementById("ville").value.trim();
+      const fiche = document.getElementById("fiche").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = "Demande d'audit gratuit - Trouvé!";
+      const body = [
+        "Bonjour,",
+        "",
+        "Je souhaite demander un audit gratuit de ma fiche Google.",
+        "",
+        `Nom : ${nom}`,
+        `Entreprise : ${entreprise}`,
+        `Ville / zone : ${ville}`,
+        `Lien de la fiche Google : ${fiche || "Non renseigné"}`,
+        "",
+        "Message :",
+        message || "Aucun détail supplémentaire.",
+        "",
+        "Merci."
+      ].join("\n");
+
+      const mailtoLink =
+        `mailto:${auditEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+
+      formStatus.textContent =
+        `Si votre messagerie ne s'ouvre pas, écrivez directement à ${auditEmail}.`;
+    });
+  </script>
+</body>
+</html>
